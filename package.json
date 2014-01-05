@@ -1,31 +1,25 @@
 {
-  "name": "raptor-util",
-  "version": "0.1.0-SNAPSHOT",
-  "description": "Core utitility functions for RaptorJS",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/raptorjs/raptor-util.git"
-  },
-  "scripts": {
-    "test": "node_modules/.bin/mocha --ui bdd --reporter spec  ./test"
-  },
-  "author": "Patrick Steele-Idem <psteeleidem@ebay.com>",
-  "maintainers": "Patrick Steele-Idem <psteeleidem@ebay.com>",
-  "dependencies": {
-  },
-  "devDependencies": {
-    "mocha": "~1.15.1",
-    "chai": "~1.8.1"
-  },
-  "license": "Apache License v2.0",
-  "bin": {},
-  "main": "lib/index.js",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "raptor": {
-    "browserDependencies": [
-      "lib/index.js"
-    ]
-  }
+    "name": "raptor-util",
+    "version": "0.1.0-SNAPSHOT",
+    "description": "Core utitility functions for RaptorJS",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/raptorjs/raptor-util.git"
+    },
+    "scripts": {
+        "test": "node_modules/.bin/mocha --ui bdd --reporter spec  ./test"
+    },
+    "author": "Patrick Steele-Idem <psteeleidem@ebay.com>",
+    "maintainers": "Patrick Steele-Idem <psteeleidem@ebay.com>",
+    "dependencies": {},
+    "devDependencies": {
+        "mocha": "~1.15.1",
+        "chai": "~1.8.1"
+    },
+    "license": "Apache License v2.0",
+    "bin": {},
+    "main": "lib/index.js",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    }
 }
