@@ -5,7 +5,7 @@ var expect = require('chai').expect;
 
 var raptorUtil = require('../lib/index'); // Load this module just to make sure it works
 
-describe('raptor-extensions/index' , function() {
+describe('raptor-util/classes' , function() {
 
     beforeEach(function(done) {
         done();
@@ -61,7 +61,7 @@ describe('raptor-extensions/index' , function() {
         expect(ostrich.toString()).to.equal('[Bird: ostrich]');
     });
 
-    it.only("should allow for $super with makeClass", function() {
+    it("should allow for $super with makeClass", function() {
 
         var Bird = raptorUtil.makeClass({
             $init: function(species) {
