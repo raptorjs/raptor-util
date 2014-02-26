@@ -3,7 +3,7 @@ chai.Assertion.includeStack = true;
 require('chai').should();
 var expect = require('chai').expect;
 
-var raptorUtil = require('../lib/index'); // Load this module just to make sure it works
+var raptorUtil = require('../'); // Load this module just to make sure it works
 
 describe('raptor-util/classes' , function() {
 
