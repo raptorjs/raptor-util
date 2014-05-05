@@ -11,20 +11,20 @@ var replacements = {
     '\n': "&#10;" //Preserve new lines so that they don't get normalized as space
 };
 
+function replaceChar(match) {
+    return replacements[match];
+}
+
 function escapeXml(str) {
     if (typeof str === 'string' && elTest.test(str)) {
-        return str.replace(elTestReplace, function(match) {
-            return replacements[match];
-        });
+        return str.replace(elTestReplace, replaceChar);
     }
     return str;
 }
 
 function escapeXmlAttr(str) {
     if (typeof str === 'string' && attrTest.test(str)) {
-        return str.replace(attrReplace, function(match) {
-            return replacements[match];
-        });
+        return str.replace(attrReplace, replaceChar);
     }
     return str;
 }
