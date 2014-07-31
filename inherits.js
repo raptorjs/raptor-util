@@ -1,4 +1,4 @@
 var _inherit = require('./inherit')._inherit;
-module.exports = function(clazz, superclass) {
-    return _inherit(clazz, superclass, false);
+module.exports = function(clazz, superclass, copyProps) {
+    return _inherit(clazz, superclass, copyProps);
 };
