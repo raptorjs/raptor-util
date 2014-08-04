@@ -1,7 +1,6 @@
 module.exports = {
     tryRequire: require('./tryRequire'),
     inherit: require('./inherit'),
-    inherits: require('./inherits'),
     makeClass: require('./makeClass'),
     makeEnum: require('./makeEnum'),
     extend: require('./extend'),
