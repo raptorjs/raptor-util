@@ -12,9 +12,9 @@
   "maintainers": "Patrick Steele-Idem <pnidem@gmail.com>",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "~1.15.1",
-    "chai": "~1.8.1",
-    "jshint": "^2.5.0"
+    "chai": "^1.9.2",
+    "jshint": "^2.5.6",
+    "mocha": "^1.21.4"
   },
   "license": "Apache License v2.0",
   "bin": {},
