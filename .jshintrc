@@ -33,7 +33,7 @@
     "white": false,
     "eqeqeq": false,
     "latedef": true,
-    "unused": true,
+    "unused": "vars",
     "strict": false,
     
     "eqnull": true
