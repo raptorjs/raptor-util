@@ -1,10 +1,13 @@
-module.exports = function extend(target, source) { //A simple function to copy properties from one project to another
+module.exports = function extend(target, source) { //A simple function to copy properties from one object to another
     if (!target) { //Check if a target was provided, otherwise create a new empty object to return
         target = {};
     }
-    for (var propName in source) {
-        if (source.hasOwnProperty(propName)) { //Only look at source properties that are not inherited
-            target[propName] = source[propName]; //Copy the property
+
+    if (source) {
+        for (var propName in source) {
+            if (source.hasOwnProperty(propName)) { //Only look at source properties that are not inherited
+                target[propName] = source[propName]; //Copy the property
+            }
         }
     }
 
