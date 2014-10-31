@@ -12,5 +12,6 @@ module.exports = {
     escapeXmlAttr: require('./escapeXml').attr,
     attr: require('./attr'),
     attrs: require('./attrs'),
-    isObjectEmpty: require('./isObjectEmpty')
+    isObjectEmpty: require('./isObjectEmpty'),
+    toArray: require('./toArray')
 };
