@@ -24,7 +24,7 @@ EventEmitterWrapper.prototype = {
             if (test(event, listenerFunc)) {
                 target.removeListener(event, listenerFunc);
                 return false;
-                
+
             } else {
                 return true;
             }
@@ -105,7 +105,7 @@ SubscriptionTracker.prototype = {
 
         if (!subscribeTo) {
             subscribeTo = new EventEmitterWrapper(target);
-            attachDestroy(target, subscribeToList);
+            attachDestroy(subscribeTo, subscribeToList);
             subscribeToList.push(subscribeTo);
         }
 
