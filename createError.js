@@ -11,11 +11,7 @@ module.exports = function(message, cause) {
             error._cause = cause;    
         }
     } else if (argsLen == 1) {
-        if (message instanceof E) {
-            error = message;
-        } else {
-            error = new E(message);
-        }
+        error = message instanceof E ? message : new E(message);
     }
     
     return error;
