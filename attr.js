@@ -1,9 +1,9 @@
 var escapeXmlAttr = require('./escapeXml').attr;
 
 module.exports = function(name, value, escapeXml) {
-    if (value === null || value === true) {
+    if (value === true) {
         value = '';
-    } else if (value === undefined || value === false || typeof value === 'string' && value.trim() === '') {
+    } else if (value == null || value === '') {
         return '';
     } else {
         value = '="' + (escapeXml === false ? value : escapeXmlAttr(value)) + '"';
