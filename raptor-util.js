@@ -8,10 +8,6 @@ module.exports = {
     forEach: require('./forEach'),
     createError: require('./createError'),
     arrayFromArguments: require('./arrayFromArguments'),
-    escapeXml: require('./escapeXml'),
-    escapeXmlAttr: require('./escapeXml').attr,
-    attr: require('./attr'),
-    attrs: require('./attrs'),
     isObjectEmpty: require('./isObjectEmpty'),
     toArray: require('./toArray')
 };
