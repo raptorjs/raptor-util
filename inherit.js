@@ -1,28 +1,25 @@
-var extend = require('./extend');
-
-function _inherit(clazz, superclass, copyProps) { //Helper function to setup the prototype chain of a class to inherit from another class's prototype
-    
-    var proto = clazz.prototype;
-    var F = function() {};
-    
-    F.prototype = superclass.prototype;
-
-    clazz.prototype = new F();
-    clazz.$super = superclass;
-
-    if (copyProps !== false) {
-        extend(clazz.prototype, proto);
+function inherit(ctor, superCtor, copyProps) {
+    var oldProto = ctor.prototype;
+    var newProto = ctor.prototype = Object.create(superCtor.prototype, {
+        constructor: {
+            value: ctor,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (oldProto && copyProps !== false) {
+        var propertyNames = Object.getOwnPropertyNames(oldProto);
+        for (var i = 0; i < propertyNames.length; i++) {
+            var name = propertyNames[i];
+            var descriptor = Object.getOwnPropertyDescriptor(oldProto, name);
+            Object.defineProperty(newProto, name, descriptor);
+        }
     }
-
-    clazz.prototype.constructor = clazz;
-    return clazz;
-}
-
-function inherit(clazz, superclass) {
-    return _inherit(clazz, superclass, true);
+    ctor.$super = superCtor;
+    ctor.prototype = newProto;
+    return ctor;
 }
 
 
 module.exports = inherit;
-
-inherit._inherit = _inherit;
+inherit._inherit = inherit;
