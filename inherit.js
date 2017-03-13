@@ -1,4 +1,6 @@
-function inherit(ctor, superCtor, copyProps) {
+var copyProps = require('./copyProps');
+
+function inherit(ctor, superCtor, shouldCopyProps) {
     var oldProto = ctor.prototype;
     var newProto = ctor.prototype = Object.create(superCtor.prototype, {
         constructor: {
@@ -7,13 +9,8 @@ function inherit(ctor, superCtor, copyProps) {
             configurable: true
         }
     });
-    if (oldProto && copyProps !== false) {
-        var propertyNames = Object.getOwnPropertyNames(oldProto);
-        for (var i = 0; i < propertyNames.length; i++) {
-            var name = propertyNames[i];
-            var descriptor = Object.getOwnPropertyDescriptor(oldProto, name);
-            Object.defineProperty(newProto, name, descriptor);
-        }
+    if (oldProto && shouldCopyProps !== false) {
+        copyProps(oldProto, newProto);
     }
     ctor.$super = superCtor;
     ctor.prototype = newProto;
