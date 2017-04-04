@@ -16,6 +16,11 @@ function replaceChar(match) {
 }
 
 function escapeXml(str) {
+    // convert array to string
+    if (Array.isArray(str)) {
+        str = '' + str;
+    }
+
     // check for most common case first
     if (typeof str === 'string') {
         return elTest.test(str) ? str.replace(elTestReplace, replaceChar) : str;
@@ -25,6 +30,10 @@ function escapeXml(str) {
 }
 
 function escapeXmlAttr(str) {
+    if (Array.isArray(str)) {
+        str = '' + str;
+    }
+
     if (typeof str === 'string') {
         return attrTest.test(str) ? str.replace(attrReplace, replaceChar) : str;
     }
